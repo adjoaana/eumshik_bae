@@ -8,13 +8,15 @@ import "./scss/style";
 function App() {
   return (
     <div className="App">
-      <DefaultLayout />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/deals" element={<Home />} />
-        <Route path="/menus" element={<Home />} />
-      </Routes>
+      <DefaultLayout>
+        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/deals" element={<Home />} />
+          <Route path="/menus" element={<Home />} />
+        </Routes>
+      </DefaultLayout>
     </div>
   );
 }
