@@ -7,7 +7,7 @@ body, html{
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-    background-color: var(--cream);
+    background-color:var(--black);
 }
 li{
     list-style: none
@@ -15,23 +15,16 @@ li{
 }
 a{text-decoration: none;}
 
-.flex{
-    display: flex;
-    &-jc-sb{
-        justify-content: space-between;
-    }
-    &-ai-c{
-        align-items: center;
-    }
+.desktop-padding{
+    padding: .5rem 4rem;
 }
 .hide-for-desktop{
     @include breakpoint-up(medium){
-
         display: none;
     }
 }
 .hide-for-mobile{
-    @include breakpoint-down(medium){
+    @include breakpoint-down(small){
         display: none;
     }
 }

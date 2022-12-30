@@ -1,108 +1,38 @@
-@use '../util/' as *;
+@use "../util/" as *;
+
 .header{
     padding: 1rem;
-    margin: 0;
-  .open{
-    span:first-child{
-        transform: rotate(45deg);
-        width: 40px;
-        margin: 1rem;
-        
-    }
-    span:nth-child(2){
-        display: none
-    }
-    span:last-child{
-        width: 40px;
-        transform: rotate(-45deg);
-    }
-  }
-
+    border-bottom: solid 2px white;
 }
 .nav{
     display: flex;
-    width: 70%;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
-    margin: 0 auto;
-    justify-content: space-between;
-    &_logo{
-
-        @include breakpoint-down(medium){
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-
-
-        }
-    }
-    &_menu{
-        color: black;
-        &_links{
-          
-           &_a{
-            position: relative;
-           
-            transition: color 300ms ease-in-out;
-            color: var(--green);
-            &::before{
+    &_links{
+        display:flex;
+        a{
+            position:relative;
+            margin-left: 5px;
+            padding: 10px;
+            color: white;
+            &::after{
                 content: "";
-                position: absolute;
                 display: block;
-                height: 10px;
-                background: linear-gradient(to right, var(--green), var(--orange));
-                left:0;
-                right:0;
+                background: var(--red);
+                width: inherit;
+                margin-top: 10px;
+                height:5px;
                 opacity: 0;
-                bottom: -30px;
                 transition: opacity 300ms ease-in-out;
             }
             &:hover{
-                color: var(--orange);
-                &::before{
-                    opacity: 1;
+                color: var(--green);
+                &::after{
+                    opacity: 1
                 }
             }
-           }
-
         }
     }
-    &_button{
-        background: linear-gradient(to right, var(--cream), var(--orange));
-        color: var(--black);
-        box-shadow: 0, 0 ,5px,15px black;
-        font-size: var(--font-med);
-        padding: 2rem 4rem;
-        border: none;
-        border-radius: 15px;
-        &:hover{
-            transform: scale(1.1);
-        }
-    }
-    &_toggle{
-        width: 4rem;
-        height:3.5rem;
-        margin:1rem;
-        span{
-            display: block;
-            width: 30px;
-            height: 4px;
-            margin: .7rem 1rem;
-            border-radius: 10%;
-            background-color: var(--lightBlack);
-            transform-origin: 7px 1px;
-            &:nth-child(2){
-                width: 35px;
-            }
-            &:not(:last-child){
-                 margin-bottom: 2px;
-            }
-        }
-        
-    }
-
-
 }
-
 
